@@ -1,0 +1,32 @@
+{
+    "batch_size_per_device": 128,
+    "checkpoint_name": "model.pkl",
+    "seed": 1189,
+    "precision": "float32",
+    "dataset": {
+        "num_workers": 32,
+        "type": "webdataset",
+        "location": "gs://eleutherai-cloob-webdataset/laion400m/{00000..41407}.tar",
+        "epoch_size": 80000000
+    },
+    "optimizer": {
+        "type": "adamw",
+        "beta_1": 0.9,
+        "beta_2": 0.98,
+        "eps": 1e-6,
+        "weight_decay": 1e-1,
+        "schedule": {
+            "lr": 1e-4,
+            "type": "cosine",
+            "steps": 781250.0,
+            "warmup": 0.9995,
+            "final_lr": 0.0
+        }
+    },
+    "wandb": {
+        "use_wandb": true,
+        "project": "cloob-jax",
+        "entity": "eleutherai",
+        "group": null
+    }
+}

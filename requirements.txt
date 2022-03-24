@@ -1,0 +1,12 @@
+dm-haiku
+jax
+numpy
+optax
+Pillow
+torch
+torchvision
+tqdm
+wandb
+git+https://github.com/openai/CLIP
+git+https://github.com/deepmind/jmp
+git+https://github.com/webdataset/webdataset

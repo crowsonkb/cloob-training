@@ -1,0 +1,28 @@
+{
+    "url": "https://the-eye.eu/public/AI/models/cloob/cloob_laion_400m_vit_b_16_32_epochs-646f61628eb4bc03a01ce5c23b727a348105f0405b6037a329da062739a06441.pkl",
+    "d_embed": 512,
+    "inv_tau": 30.0,
+    "scale_hopfield": 15.0,
+    "image_encoder": {
+        "type": "ViT",
+        "image_size": 224,
+        "input_channels": 3,
+        "normalize": {
+            "mean": [0.48145466, 0.4578275, 0.40821073],
+            "std": [0.26862954, 0.26130258, 0.27577711]
+        },
+        "patch_size": 16,
+        "n_layers": 12,
+        "d_model": 768,
+        "n_heads": 12
+    },
+    "text_encoder": {
+        "type": "transformer",
+        "tokenizer": "clip",
+        "text_size": 77,
+        "vocab_size": 49408,
+        "n_layers": 12,
+        "d_model": 512,
+        "n_heads": 8      
+    }
+}
