@@ -13,6 +13,7 @@ Zero-shot ImageNet validation set accuracy (using [OpenCLIP](https://github.com/
 | OpenAI CLIP ViT-B/32                | 0.6327  | 0.88772 |
 | OpenAI CLIP ViT-B/16                | 0.68132 | 0.91768 |
 | OpenAI CLIP ViT-L/14                | 0.75388 | 0.9454  |
+| OpenAI CLIP ViT-L/14 @ 336 px       | 0.76564 | 0.9515  |
 | OpenAI CLIP RN50                    | 0.59806 | 0.86498 |
 | OpenAI CLIP RN101                   | 0.62296 | 0.88106 |
 | OpenAI CLIP RN50x4                  | 0.66268 | 0.9046  |
