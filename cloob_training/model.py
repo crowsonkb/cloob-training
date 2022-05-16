@@ -22,7 +22,7 @@ class SelfAttention(hk.Module):
     def __call__(self, x, padding_mask=None):
         d_model = x.shape[-1]
         x = hk.LayerNorm(axis=-1, create_scale=True, create_offset=True)(x)
-        padding_mask = None if padding_mask is None else padding_mask[:, None, :, None]
+        padding_mask = None if padding_mask is None else padding_mask[:, None, :, None]    # This is wrong! It should be [:, None, None, :].
         x = hk.MultiHeadAttention(self.num_heads, x.shape[-1] // self.num_heads, 1.)(x, x, x, padding_mask)
         return x
 

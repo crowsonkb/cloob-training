@@ -48,7 +48,7 @@ class SelfAttention(nn.Module):
         v = self.value(x).view([*x.shape[:-1], self.n_heads, head_size])
         attn_logits = torch.einsum('...thd,...Thd->...htT', q, k) / head_size**0.5
         if padding_mask is not None:
-            mask = padding_mask[:, None, :, None]
+            mask = padding_mask[:, None, :, None]  # This is wrong! It should be [:, None, None, :].
             attn_logits = torch.where(mask, attn_logits, attn_logits.new_tensor(-1e30))
         attn_weights = attn_logits.softmax(-1)
         attn = torch.einsum('...htT,...Thd->...thd', attn_weights, v)
